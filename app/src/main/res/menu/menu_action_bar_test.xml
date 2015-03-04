@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item
+      android:id="@+id/action_settings0"
+      android:title="@string/action_settings"
+      android:orderInCategory="100"
+      android:icon="@drawable/ic_launcher"
+      app:showAsAction="always"/>
+  <item
+      android:id="@+id/menu_overflow"
+      android:icon="@drawable/ic_launcher"
+      android:orderInCategory="11111"
+      android:title="overflow"
+      app:showAsAction="always">
+    <menu>
+      <item
+          android:id="@+id/category_create"
+          android:title="Category create"
+          app:showAsAction="never"/>
+
+
+      <item
+          android:id="@+id/shopping_cart"
+          android:title="Shopping Cart"
+          app:showAsAction="never"/>
+
+
+      <item
+          android:id="@+id/order_list"
+          android:title="Order List"
+          app:showAsAction="never"/>
+    </menu>
+  </item>
+</menu>
