@@ -8,12 +8,12 @@ import android.widget.Toast;
 
 import com.mengwang.guessyourfav.R;
 
-public class FavMainActivity extends Activity implements View.OnClickListener {
+public class MasterActivity extends Activity implements View.OnClickListener {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_fav_main);
+    setContentView(R.layout.activity_master);
     findViewById(R.id.root).setOnClickListener(this);
   }
 

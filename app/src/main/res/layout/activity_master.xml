@@ -5,7 +5,7 @@
               android:layout_height="match_parent"
               android:orientation="vertical"
               android:id="@+id/root"
-              tools:context="com.mengwang.ui.activity.FavMainActivity">
+              tools:context="com.mengwang.ui.activity.MasterActivity">
 
   <Button
       android:id="@+id/control_camera"
