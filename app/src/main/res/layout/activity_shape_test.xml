@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
     <TextView
         android:id="@+id/type"
@@ -11,9 +11,30 @@
         android:background="@drawable/rect_with_corner_bg"
         android:gravity="center"
         android:padding="4dp"
-        android:text="分享红包"
+        android:text="竖着来"
         android:textColor="@android:color/white"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"/>
 
+    <LinearLayout android:id="@+id/product_merchant_container"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="left|bottom"
+                  android:layout_margin="4dp"
+                  android:background="@drawable/shop_merchant_name_bg"
+                  android:gravity="center_vertical"
+                  android:orientation="horizontal"
+                  android:paddingBottom="2dp"
+                  android:paddingLeft="4dp"
+                  android:paddingRight="4dp"
+                  android:paddingTop="2dp">
+        <!--merchant logo image-->
+        <ImageView
+            android:id="@+id/product_big_item_merchant_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/aliexpress"/>
+    </LinearLayout>
 </LinearLayout>
