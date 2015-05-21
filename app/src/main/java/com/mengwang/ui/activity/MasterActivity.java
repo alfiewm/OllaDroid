@@ -17,6 +17,12 @@ public class MasterActivity extends Activity implements View.OnClickListener {
     findViewById(R.id.root).setOnClickListener(this);
   }
 
+  @Override
+  protected void onResume() {
+    super.onResume();
+//    findViewById(R.id.btn_range_seekbar).performClick();
+  }
+
   public void onClick(View v) {
     switch (v.getId()) {
       case R.id.control_camera:
@@ -38,8 +44,8 @@ public class MasterActivity extends Activity implements View.OnClickListener {
       case R.id.webview_cookie:
         BrowserActivity.launchBrowser("http://m.aliexpress.com", this, null);
         break;
-      case R.id.root:
-        Toast.makeText(this, "root clicked", Toast.LENGTH_SHORT).show();
+      case R.id.btn_range_seekbar:
+        startActivity(new Intent(this, RangeSeekActivity.class));
         break;
       default:
         break;
