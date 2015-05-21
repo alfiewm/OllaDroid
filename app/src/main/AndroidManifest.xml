@@ -14,8 +14,12 @@
 
     <!-- if you just want to save the image in your private photo directory and you'are using >= 4.4, this permission is no longer needed -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
 
     <application
         android:allowBackup="true"
@@ -52,6 +56,11 @@
         <activity
             android:name="com.mengwang.ui.activity.ActionBarTestActivity"
             android:label="@string/title_activity_action_bar_test" >
+        </activity>
+        <activity
+            android:name="com.mengwang.ui.activity.BrowserActivity"
+            android:theme="@style/Theme.AppCompat"
+            android:label="@string/title_activity_browser" >
         </activity>
     </application>
 

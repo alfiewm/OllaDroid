@@ -35,6 +35,9 @@ public class MasterActivity extends Activity implements View.OnClickListener {
       case R.id.action_bar_test:
         startActivity(new Intent(this, ActionBarTestActivity.class));
         break;
+      case R.id.webview_cookie:
+        BrowserActivity.launchBrowser("http://m.aliexpress.com", this, null);
+        break;
       case R.id.root:
         Toast.makeText(this, "root clicked", Toast.LENGTH_SHORT).show();
         break;
