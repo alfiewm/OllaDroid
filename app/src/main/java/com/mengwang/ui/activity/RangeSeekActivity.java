@@ -6,32 +6,29 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.mengwang.guessyourfav.R;
 import com.mengwang.ui.view.RangeSeekBar;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
+
 public class RangeSeekActivity extends ActionBarActivity {
   private static int MIN_SEEK_BAR_VALUE = 0;
   private static int MAX_SEEK_BAR_VALUE = 1000;
 
-  RangeSeekBar<Integer> rangeSeekBar;
-  EditText minValueView;
-  EditText maxValueView;
-  Button btnReset;
-  Button btnObtainValue;
+  @InjectView(R.id.range_seek_bar) RangeSeekBar<Integer> rangeSeekBar;
+  @InjectView(R.id.min_value) EditText minValueView;
+  @InjectView(R.id.max_value) EditText maxValueView;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_range_seek);
-    minValueView = (EditText) findViewById(R.id.min_value);
-    maxValueView = (EditText) findViewById(R.id.max_value);
-    btnReset = (Button) findViewById(R.id.btn_reset);
-    btnObtainValue = (Button) findViewById(R.id.btn_obtain_value);
-    rangeSeekBar = (RangeSeekBar<Integer>) findViewById(R.id.range_seek_bar);
+    ButterKnife.inject(this);
     rangeSeekBar.setRangeValues(MIN_SEEK_BAR_VALUE, MAX_SEEK_BAR_VALUE);
     rangeSeekBar.setValueFormatter(new PriceValueFormatter(this, 0/*actual min price*/, 500/*actual max price*/, "Rs."/*currency*/));
   }
@@ -53,7 +50,7 @@ public class RangeSeekActivity extends ActionBarActivity {
       m_maxDisplayValue = maxValue;
       m_currency = currency;
       priceRange = m_maxDisplayValue - m_minDisplayValue;
-      m_baseScale = (int) Math.ceil(priceRange*DIVISION_POINT_PERCENTAGE/DIVISION_SEEK_BAR_VALUE);
+      m_baseScale = (int) Math.ceil(priceRange * DIVISION_POINT_PERCENTAGE / DIVISION_SEEK_BAR_VALUE);
     }
 
     @Override
@@ -75,7 +72,7 @@ public class RangeSeekActivity extends ActionBarActivity {
       } else {
         result = m_minDisplayValue + priceRange * DIVISION_POINT_PERCENTAGE
                 + priceRange * (1 - DIVISION_POINT_PERCENTAGE) * (seekBarValue - DIVISION_SEEK_BAR_VALUE) / (MAX_SEEK_BAR_VALUE - DIVISION_SEEK_BAR_VALUE);
-        return round(result, m_baseScale*10);
+        return round(result, m_baseScale * 10);
       }
     }
 
@@ -90,9 +87,10 @@ public class RangeSeekActivity extends ActionBarActivity {
   }
 
   public static int round(float i, int v) {
-    return Math.round(i/v)*v;
+    return Math.round(i / v) * v;
   }
 
+  @OnClick({ R.id.btn_obtain_value, R.id.btn_reset, R.id.btn_set })
   public void onClick(View v) {
     switch (v.getId()) {
       case R.id.btn_reset:
