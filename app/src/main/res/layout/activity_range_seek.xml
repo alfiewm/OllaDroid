@@ -15,8 +15,6 @@
         android:layout_height="83dp"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
-        rsb:absoluteMaxValue="1000"
-        rsb:absoluteMinValue="0"
         rsb:lineHeight="2dp"/>
 
     <LinearLayout

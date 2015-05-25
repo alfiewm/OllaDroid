@@ -14,6 +14,8 @@ import com.mengwang.guessyourfav.R;
 import com.mengwang.ui.view.RangeSeekBar;
 
 public class RangeSeekActivity extends ActionBarActivity {
+  private static int MIN_SEEK_BAR_VALUE = 0;
+  private static int MAX_SEEK_BAR_VALUE = 1000;
 
   RangeSeekBar<Integer> rangeSeekBar;
   EditText minValueView;
@@ -30,20 +32,20 @@ public class RangeSeekActivity extends ActionBarActivity {
     btnReset = (Button) findViewById(R.id.btn_reset);
     btnObtainValue = (Button) findViewById(R.id.btn_obtain_value);
     rangeSeekBar = (RangeSeekBar<Integer>) findViewById(R.id.range_seek_bar);
-    rangeSeekBar.setValueFormatter(new PriceValueFormatter(this, 0, 500, "Rs."));
+    rangeSeekBar.setRangeValues(MIN_SEEK_BAR_VALUE, MAX_SEEK_BAR_VALUE);
+    rangeSeekBar.setValueFormatter(new PriceValueFormatter(this, 0/*actual min price*/, 500/*actual max price*/, "Rs."/*currency*/));
   }
 
   private static class PriceValueFormatter implements RangeSeekBar.ValueFormatter<Integer> {
-    private final static double DIVISION_POINT_PERCENTAGE = 0.2; // Seek range before the division point will take half.
-    private static int MIN_SEEK_BAR_VALUE = 0;
-    private static int MAX_SEEK_BAR_VALUE = 1000;
+    private final static float DIVISION_POINT_PERCENTAGE = 0.2f; // Seek range before the division point will take half.
     private static final int DIVISION_SEEK_BAR_VALUE = MAX_SEEK_BAR_VALUE / 2;
 
     private int m_minDisplayValue;
     private int m_maxDisplayValue;
+    private int m_baseScale;
+    private int priceRange;
     private Context m_context;
     private String m_currency = "";
-    private int priceRange;
 
     private PriceValueFormatter(Context context, int minValue, int maxValue, String currency) {
       m_context = context;
@@ -51,6 +53,7 @@ public class RangeSeekActivity extends ActionBarActivity {
       m_maxDisplayValue = maxValue;
       m_currency = currency;
       priceRange = m_maxDisplayValue - m_minDisplayValue;
+      m_baseScale = (int) Math.ceil(priceRange*DIVISION_POINT_PERCENTAGE/DIVISION_SEEK_BAR_VALUE);
     }
 
     @Override
@@ -65,22 +68,29 @@ public class RangeSeekActivity extends ActionBarActivity {
     }
 
     public Integer mapSeekBarValueToDisplayValue(Integer seekBarValue) {
+      float result;
       if (seekBarValue <= DIVISION_SEEK_BAR_VALUE) {
-        return m_minDisplayValue + Math.round(((float) (seekBarValue * priceRange * DIVISION_POINT_PERCENTAGE)) / DIVISION_SEEK_BAR_VALUE);
+        result = m_minDisplayValue + (seekBarValue * priceRange * DIVISION_POINT_PERCENTAGE) / DIVISION_SEEK_BAR_VALUE;
+        return round(result, m_baseScale);
       } else {
-        return m_minDisplayValue + (int) Math.round(priceRange * DIVISION_POINT_PERCENTAGE)
-                + (int) Math.round((float) priceRange * (1 - DIVISION_POINT_PERCENTAGE) * (seekBarValue - DIVISION_SEEK_BAR_VALUE) / (MAX_SEEK_BAR_VALUE - DIVISION_SEEK_BAR_VALUE));
+        result = m_minDisplayValue + priceRange * DIVISION_POINT_PERCENTAGE
+                + priceRange * (1 - DIVISION_POINT_PERCENTAGE) * (seekBarValue - DIVISION_SEEK_BAR_VALUE) / (MAX_SEEK_BAR_VALUE - DIVISION_SEEK_BAR_VALUE);
+        return round(result, m_baseScale*10);
       }
     }
 
     public Integer mapDisplayValueToSeekBarValue(Integer displayValue) {
       if (displayValue - m_minDisplayValue <= priceRange * DIVISION_POINT_PERCENTAGE) {
-        return (int) ((double) (displayValue - m_minDisplayValue) * DIVISION_SEEK_BAR_VALUE / (priceRange * DIVISION_POINT_PERCENTAGE));
+        return (int) ((displayValue - m_minDisplayValue) * DIVISION_SEEK_BAR_VALUE / (priceRange * DIVISION_POINT_PERCENTAGE));
       } else {
         return DIVISION_SEEK_BAR_VALUE
-                + (int) Math.round(((float) (displayValue - m_minDisplayValue - priceRange * DIVISION_POINT_PERCENTAGE) * (MAX_SEEK_BAR_VALUE - DIVISION_SEEK_BAR_VALUE) / (priceRange * (1 - DIVISION_POINT_PERCENTAGE))));
+                + Math.round(((displayValue - m_minDisplayValue - priceRange * DIVISION_POINT_PERCENTAGE) * (MAX_SEEK_BAR_VALUE - DIVISION_SEEK_BAR_VALUE) / (priceRange * (1 - DIVISION_POINT_PERCENTAGE))));
       }
     }
+  }
+
+  public static int round(float i, int v) {
+    return Math.round(i/v)*v;
   }
 
   public void onClick(View v) {
