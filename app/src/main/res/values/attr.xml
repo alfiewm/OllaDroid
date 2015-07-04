@@ -9,4 +9,11 @@
         <attr name="highlightedLineColor" format="color|reference"/>
         <attr name="android:textColor"/>
     </declare-styleable>
+    <declare-styleable name="SplashView">
+        <attr name="strokeWidth" format="float"/>
+        <attr name="strokeColor" format="color|reference"/>
+        <attr name="phase" format="float"/>
+        <attr name="duration" format="integer"/>
+        <attr name="fadeFactor" format="float"/>
+    </declare-styleable>
 </resources>

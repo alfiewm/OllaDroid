@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.mengwang.guessyourfav.R;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MasterActivity extends Activity implements View.OnClickListener {
 
@@ -14,6 +16,7 @@ public class MasterActivity extends Activity implements View.OnClickListener {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_master);
+    ButterKnife.inject(this);
     findViewById(R.id.root).setOnClickListener(this);
   }
 
@@ -23,6 +26,8 @@ public class MasterActivity extends Activity implements View.OnClickListener {
 //    findViewById(R.id.btn_range_seekbar).performClick();
   }
 
+  @OnClick({R.id.control_camera, R.id.animation_test, R.id.swipe_refresh, R.id.shape_test,
+          R.id.action_bar_test, R.id.webview_cookie, R.id.btn_range_seekbar, R.id.btn_progress_animation})
   public void onClick(View v) {
     switch (v.getId()) {
       case R.id.control_camera:
@@ -46,6 +51,9 @@ public class MasterActivity extends Activity implements View.OnClickListener {
         break;
       case R.id.btn_range_seekbar:
         startActivity(new Intent(this, RangeSeekActivity.class));
+        break;
+      case R.id.btn_progress_animation:
+        startActivity(new Intent(this, ProgressAnimationActivity.class));
         break;
       default:
         break;

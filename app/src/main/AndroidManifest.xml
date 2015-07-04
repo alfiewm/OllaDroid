@@ -65,6 +65,9 @@
             android:name="com.mengwang.ui.activity.RangeSeekActivity"
             android:label="@string/title_activity_range_seek">
         </activity>
+        <activity android:name="com.mengwang.ui.activity.ProgressAnimationActivity"
+                  android:label="@string/title_activity_progress_animation">
+        </activity>
     </application>
 
 </manifest>
