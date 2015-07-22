@@ -2,7 +2,7 @@ package com.mengwang.ui.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 import com.mengwang.guessyourfav.R;
 
-public class ActionBarTestActivity extends ActionBarActivity {
+public class ActionBarTestActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +63,7 @@ public class ActionBarTestActivity extends ActionBarActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_action_bar_test, container, false);
-            return rootView;
+            return  inflater.inflate(R.layout.fragment_action_bar_test, container, false);
         }
     }
 }

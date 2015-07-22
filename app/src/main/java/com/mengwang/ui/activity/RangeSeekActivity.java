@@ -2,7 +2,7 @@ package com.mengwang.ui.activity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,7 +16,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class RangeSeekActivity extends ActionBarActivity {
+public class RangeSeekActivity extends AppCompatActivity {
     private static int MIN_SEEK_BAR_VALUE = 0;
     private static int MAX_SEEK_BAR_VALUE = 1000;
 

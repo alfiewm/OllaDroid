@@ -1,9 +1,9 @@
 package com.mengwang.ui.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-public class PocketAnimActivity extends Activity {
+public class PocketAnimActivity extends AppCompatActivity {
 
     /**
      * Called when the activity is first created.

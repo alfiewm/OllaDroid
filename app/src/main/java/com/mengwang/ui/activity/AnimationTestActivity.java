@@ -1,13 +1,13 @@
 package com.mengwang.ui.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.mengwang.guessyourfav.R;
 import com.mengwang.ui.view.StatusBar;
 
-public class AnimationTestActivity extends Activity {
+public class AnimationTestActivity extends AppCompatActivity {
 
     private StatusBar statusBar;
 

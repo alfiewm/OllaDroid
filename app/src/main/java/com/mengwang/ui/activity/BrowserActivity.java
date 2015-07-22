@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,7 +19,7 @@ import android.webkit.WebViewClient;
 import com.mengwang.guessyourfav.R;
 import com.mengwang.ui.model.BrowserParams;
 
-public class BrowserActivity extends ActionBarActivity {
+public class BrowserActivity extends AppCompatActivity {
 
     private static final String CHROME_PACKAGE = "com.android.chrome";
     private WebView webView;
@@ -52,16 +52,13 @@ public class BrowserActivity extends ActionBarActivity {
         }
 
         final Uri uri = Uri.parse(url);
-        if (uri != null) {
-            Intent i = new Intent(context, BrowserActivity.class);
-            i.setData(uri);
-            if (options != null) {
-                options.writeToIntent(i);
-            }
-            context.startActivity(i);
-            return true;
+        Intent i = new Intent(context, BrowserActivity.class);
+        i.setData(uri);
+        if (options != null) {
+            options.writeToIntent(i);
         }
-        return false;
+        context.startActivity(i);
+        return true;
     }
 
     @Override

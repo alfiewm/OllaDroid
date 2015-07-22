@@ -1,11 +1,11 @@
 package com.mengwang.ui.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.mengwang.guessyourfav.R;
 
-public class ShapeTestActivity extends Activity {
+public class ShapeTestActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

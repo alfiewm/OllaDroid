@@ -1,6 +1,5 @@
 package com.mengwang.ui.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -8,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,7 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class UsingCameraActivity extends Activity {
+public class UsingCameraActivity extends AppCompatActivity {
     public static final String TAG = "UsingcameraActivity";
     public static final int REQUEST_SYSTEM_CAMERA = 0;
 

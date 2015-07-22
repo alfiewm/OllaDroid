@@ -1,17 +1,17 @@
 package com.mengwang.ui.activity;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.mengwang.guessyourfav.R;
 
-public class SwipeRefreshActivity extends Activity {
+public class SwipeRefreshActivity extends AppCompatActivity {
 
     private SwipeRefreshLayout mRefreshLayout;
     private String[] dataStrings = {"Bill", "Molly", "Cassie", "Pony", "Jony", "Tony", "Luny"};
@@ -37,7 +37,7 @@ public class SwipeRefreshActivity extends Activity {
         });
 
         ListView list = (ListView) findViewById(R.id.swipe_list);
-        list.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dataStrings));
+        list.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dataStrings));
     }
 
 }

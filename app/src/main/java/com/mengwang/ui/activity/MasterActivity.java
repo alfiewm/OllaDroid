@@ -1,8 +1,8 @@
 package com.mengwang.ui.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.mengwang.guessyourfav.R;
@@ -10,7 +10,7 @@ import com.mengwang.guessyourfav.R;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MasterActivity extends Activity implements View.OnClickListener {
+public class MasterActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
