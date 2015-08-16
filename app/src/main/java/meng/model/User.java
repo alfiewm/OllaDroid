@@ -34,6 +34,6 @@ public class User extends BaseObservable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-        notifyPropertyChanged(BR.firstName);
+        notifyPropertyChanged(BR.lastName);
     }
 }

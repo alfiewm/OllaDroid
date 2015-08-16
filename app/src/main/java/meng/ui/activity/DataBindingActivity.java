@@ -33,6 +33,7 @@ public class DataBindingActivity extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.change_user:
                 user.setFirstName("ShaBi");
+                user.setLastName("jiuShiWo");
                 break;
             default:
                 break;
