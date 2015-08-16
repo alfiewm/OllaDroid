@@ -1,7 +1,4 @@
-package com.mengwang.ui.model;
-
-import android.content.Intent;
-import android.os.Bundle;
+package meng.model;
 
 import android.content.Intent;
 import android.os.Bundle;

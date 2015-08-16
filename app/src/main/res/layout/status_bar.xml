@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.mengwang.ui.view.StatusBar xmlns:android="http://schemas.android.com/apk/res/android"
+<meng.ui.view.StatusBar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="600dp" >
 
@@ -88,4 +88,4 @@
         android:paddingRight="10dp"
         android:src="@drawable/btn_fold" />
 
-</com.mengwang.ui.view.StatusBar>
+</meng.ui.view.StatusBar>

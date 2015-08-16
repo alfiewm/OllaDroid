@@ -1,11 +1,11 @@
-package com.mengwang.ui.activity;
+package meng.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.mengwang.guessyourfav.R;
+import meng.olladroid.R;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -27,7 +27,8 @@ public class MasterActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     @OnClick({R.id.control_camera, R.id.animation_test, R.id.swipe_refresh, R.id.shape_test,
-            R.id.action_bar_test, R.id.webview_cookie, R.id.btn_range_seekbar, R.id.btn_progress_animation})
+            R.id.action_bar_test, R.id.webview_cookie, R.id.btn_range_seekbar, R.id.btn_progress_animation,
+            R.id.btn_data_binding})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.control_camera:
@@ -54,6 +55,9 @@ public class MasterActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.btn_progress_animation:
                 startActivity(new Intent(this, ProgressAnimationActivity.class));
+                break;
+            case R.id.btn_data_binding:
+                startActivity(new Intent(this, DataBindingActivity.class));
                 break;
             default:
                 break;

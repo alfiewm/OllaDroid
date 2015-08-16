@@ -3,7 +3,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context="com.mengwang.ui.activity.BrowserActivity">
+              tools:context="meng.ui.activity.BrowserActivity">
 
     <WebView
         android:id="@+id/web_view"

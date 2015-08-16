@@ -1,4 +1,4 @@
-package com.mengwang.ui.view;
+package meng.ui.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.mengwang.guessyourfav.R;
+import meng.olladroid.R;
 
 public class StatusBar extends RelativeLayout {
 

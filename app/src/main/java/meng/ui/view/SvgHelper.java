@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.mengwang.ui.view;
+package meng.ui.view;
 
 import android.content.Context;
 import android.graphics.Canvas;

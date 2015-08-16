@@ -1,11 +1,12 @@
-package com.mengwang.ui.activity;
+package meng.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.mengwang.guessyourfav.R;
-import com.mengwang.ui.view.StatusBar;
+import meng.ui.view.StatusBar;
+
+import meng.olladroid.R;
 
 public class AnimationTestActivity extends AppCompatActivity {
 

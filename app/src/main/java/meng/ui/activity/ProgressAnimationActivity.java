@@ -1,12 +1,12 @@
-package com.mengwang.ui.activity;
+package meng.ui.activity;
 
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import com.mengwang.guessyourfav.R;
-import com.mengwang.ui.view.SplashView;
+import meng.olladroid.R;
+import meng.ui.view.SplashView;
 
 
 public class ProgressAnimationActivity extends AppCompatActivity {

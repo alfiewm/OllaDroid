@@ -1,4 +1,4 @@
-package com.mengwang.ui.activity;
+package meng.ui.activity;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -9,8 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.mengwang.guessyourfav.R;
-import com.mengwang.ui.view.RangeSeekBar;
+import meng.olladroid.R;
+import meng.ui.view.RangeSeekBar;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

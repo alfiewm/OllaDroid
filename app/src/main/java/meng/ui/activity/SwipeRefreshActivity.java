@@ -1,4 +1,4 @@
-package com.mengwang.ui.activity;
+package meng.ui.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.mengwang.guessyourfav.R;
+import meng.olladroid.R;
 
 public class SwipeRefreshActivity extends AppCompatActivity {
 

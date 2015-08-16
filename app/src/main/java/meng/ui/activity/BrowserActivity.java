@@ -1,4 +1,4 @@
-package com.mengwang.ui.activity;
+package meng.ui.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,8 +16,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.mengwang.guessyourfav.R;
-import com.mengwang.ui.model.BrowserParams;
+import meng.model.BrowserParams;
+import meng.olladroid.R;
 
 public class BrowserActivity extends AppCompatActivity {
 

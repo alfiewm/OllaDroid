@@ -6,7 +6,7 @@
               android:background="#ff6700"
               android:orientation="vertical">
 
-    <com.mengwang.ui.view.SplashView
+    <meng.ui.view.SplashView
         android:id="@+id/splash"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

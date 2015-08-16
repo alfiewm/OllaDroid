@@ -1,4 +1,4 @@
-package com.mengwang.ui.view;
+package meng.ui.view;
 
 /*
 Copyright 2014 Stephan Tittel and Yahoo Inc.
@@ -34,7 +34,7 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.widget.ImageView;
 
-import com.mengwang.guessyourfav.R;
+import meng.olladroid.R;
 
 import java.math.BigDecimal;
 

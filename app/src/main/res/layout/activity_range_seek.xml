@@ -7,9 +7,9 @@
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
-                tools:context="com.mengwang.ui.activity.RangeSeekActivity">
+                tools:context="meng.ui.activity.RangeSeekActivity">
 
-    <com.mengwang.ui.view.RangeSeekBar
+    <meng.ui.view.RangeSeekBar
         android:id="@+id/range_seek_bar"
         android:layout_width="match_parent"
         android:layout_height="83dp"

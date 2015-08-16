@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mengwang.ui.activity.UsingCameraActivity" >
+    tools:context="meng.ui.activity.UsingCameraActivity" >
 
     <ImageView
         android:id="@+id/captured_image"

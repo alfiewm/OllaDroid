@@ -1,4 +1,4 @@
-package com.mengwang.ui.activity;
+package meng.ui.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.mengwang.guessyourfav.R;
+import meng.olladroid.R;
 
 public class ActionBarTestActivity extends AppCompatActivity {
 

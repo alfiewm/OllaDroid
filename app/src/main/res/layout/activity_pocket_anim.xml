@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.mengwang.ui.activity.PocketAnimActivity" >
+    tools:context="meng.ui.activity.PocketAnimActivity" >
 
     <TextView
         android:id="@+id/logo_text"

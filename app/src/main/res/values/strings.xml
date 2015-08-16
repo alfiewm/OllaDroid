@@ -28,5 +28,6 @@
     <string name="shop_search_price_no_min">no min</string>
     <string name="notification_content">Tap to open VPN settings</string>
     <string name="title_activity_progress_animation">Progress Animation</string>
+    <string name="title_activity_data_binding">Data Binding</string>
 
 </resources>

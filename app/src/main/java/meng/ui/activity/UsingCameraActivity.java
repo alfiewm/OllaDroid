@@ -1,4 +1,4 @@
-package com.mengwang.ui.activity;
+package meng.ui.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -12,8 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.mengwang.guessyourfav.R;
-
+import meng.olladroid.R;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;

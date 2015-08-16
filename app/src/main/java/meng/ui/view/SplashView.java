@@ -1,4 +1,4 @@
-package com.mengwang.ui.view;
+package meng.ui.view;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
@@ -11,7 +11,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
-import com.mengwang.guessyourfav.R;
+import meng.olladroid.R;
 
 import java.util.ArrayList;
 import java.util.List;
