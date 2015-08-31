@@ -1,77 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/root"
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="meng.ui.activity.MasterActivity">
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/control_camera"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/controlling_camera"/>
+        android:orientation="vertical"
+        tools:context="meng.ui.activity.MasterActivity">
 
-    <Button
-        android:id="@+id/animation_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/animation_test"/>
+        <Button
+            android:id="@+id/control_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/controlling_camera"/>
 
-    <Button
-        android:id="@+id/swipe_refresh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/swipe_refresh"/>
+        <Button
+            android:id="@+id/animation_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/animation_test"/>
 
-    <Button
-        android:id="@+id/customize_camera"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="lou le"/>
+        <Button
+            android:id="@+id/swipe_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/swipe_refresh"/>
 
-    <Button
-        android:id="@+id/shape_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="shape test"/>
+        <Button
+            android:id="@+id/customize_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="lou le"/>
 
-    <Button
-        android:id="@+id/action_bar_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="action bar test"/>
+        <Button
+            android:id="@+id/shape_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="shape test"/>
 
-    <Button
-        android:id="@+id/webview_cookie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="webview cookie"/>
+        <Button
+            android:id="@+id/action_bar_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="action bar test"/>
 
-    <Button
-        android:id="@+id/btn_range_seekbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Range seek bar"/>
+        <Button
+            android:id="@+id/webview_cookie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Browser Activity"/>
 
-    <Button
-        android:id="@+id/btn_progress_animation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/title_activity_progress_animation"/>
+        <Button
+            android:id="@+id/btn_range_seekbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Range seek bar"/>
 
-    <Button
-        android:id="@+id/btn_data_binding"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/title_activity_data_binding"/>
+        <Button
+            android:id="@+id/btn_progress_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_activity_progress_animation"/>
 
-    <Button
-        android:id="@+id/btn_to_be_continue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/to_be_continue"/>
+        <Button
+            android:id="@+id/btn_data_binding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_activity_data_binding"/>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btn_to_be_continue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/to_be_continue"/>
+
+    </LinearLayout>
+</ScrollView>

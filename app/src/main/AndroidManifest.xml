@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="meng.olladroid"
-          xmlns:android="http://schemas.android.com/apk/res/android"
-          android:versionCode="1"
-          android:versionName="1.0">
+<manifest
+    package="meng.olladroid"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -29,20 +30,24 @@
         <activity
             android:name="meng.ui.activity.MasterActivity"
             android:label="@string/app_name"
+            android:noHistory="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+            <intent-filter
+                android:label="OllaDroid Fake Share">
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
             </intent-filter>
         </activity>
         <activity
             android:name="meng.ui.activity.UsingCameraActivity"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
         <activity android:name="meng.ui.activity.AnimationTestActivity">
         </activity>
@@ -55,21 +60,25 @@
         <activity android:name="meng.ui.activity.ShapeTestActivity"/>
         <activity
             android:name="meng.ui.activity.ActionBarTestActivity"
-            android:label="@string/title_activity_action_bar_test">
+            android:label="@string/title_activity_action_bar_test"
+            android:launchMode="singleTop">
         </activity>
         <activity
             android:name="meng.ui.activity.BrowserActivity"
-            android:label="@string/title_activity_browser">
+            android:label="@string/title_activity_browser"
+            android:launchMode="singleTop">
         </activity>
         <activity
             android:name="meng.ui.activity.RangeSeekActivity"
             android:label="@string/title_activity_range_seek">
         </activity>
-        <activity android:name="meng.ui.activity.ProgressAnimationActivity"
-                  android:label="@string/title_activity_progress_animation">
+        <activity
+            android:name="meng.ui.activity.ProgressAnimationActivity"
+            android:label="@string/title_activity_progress_animation">
         </activity>
-        <activity android:name="meng.ui.activity.DataBindingActivity"
-                  android:label="@string/title_activity_data_binding"/>
+        <activity
+            android:name="meng.ui.activity.DataBindingActivity"
+            android:label="@string/title_activity_data_binding"/>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package meng.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -64,6 +65,19 @@ public class ActionBarTestActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             return  inflater.inflate(R.layout.fragment_action_bar_test, container, false);
+        }
+
+        @Override
+        public void onResume() {
+            super.onResume();
+            getView().findViewById(R.id.camera_activity).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent it = new Intent(getActivity(), UsingCameraActivity.class);
+                    it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(it);
+                }
+            });
         }
     }
 }
