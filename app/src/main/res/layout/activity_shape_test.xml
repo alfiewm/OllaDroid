@@ -37,4 +37,9 @@
             android:scaleType="centerCrop"
             android:src="@drawable/aliexpress"/>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/html_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
