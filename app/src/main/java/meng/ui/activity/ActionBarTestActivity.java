@@ -73,8 +73,7 @@ public class ActionBarTestActivity extends AppCompatActivity {
             getView().findViewById(R.id.camera_activity).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent it = new Intent(getActivity(), UsingCameraActivity.class);
-                    it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    Intent it = new Intent(getActivity(), SearchViewActivity.class);
                     startActivity(it);
                 }
             });
