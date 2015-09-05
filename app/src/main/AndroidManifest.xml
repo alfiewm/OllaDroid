@@ -56,7 +56,8 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar">
         </activity>
-        <activity android:name="meng.ui.activity.ShapeTestActivity"/>
+        <activity android:name="meng.ui.activity.ShapeTestActivity"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name="meng.ui.activity.ActionBarTestActivity"
             android:label="@string/title_activity_action_bar_test"

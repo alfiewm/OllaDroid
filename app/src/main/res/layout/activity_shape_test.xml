@@ -1,82 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/type"
-        android:layout_width="54dp"
-        android:layout_height="120dp"
-        android:background="@drawable/rect_with_corner_bg"
-        android:gravity="center"
-        android:padding="4dp"
-        android:text="竖着来"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"/>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
 
     <LinearLayout
-        android:id="@+id/product_merchant_container"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="left|bottom"
-        android:layout_margin="4dp"
-        android:background="@drawable/shop_merchant_name_bg"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingBottom="2dp"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        android:paddingTop="2dp">
-        <!--merchant logo image-->
-        <ImageView
-            android:id="@+id/product_big_item_merchant_logo"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <meng.ui.view.PinEntryView
+            android:id="@+id/pin_entry_view"
             android:layout_width="wrap_content"
-            android:layout_height="16dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/aliexpress"/>
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:accentStyle="surround"
+            app:accentType="character"
+            app:accentWidth="2dp"
+            app:digitBackground="@android:color/white"
+            app:digitHeight="64dp"
+            app:digitSpacing="5dp"
+            app:digitTextColor="@android:color/black"
+            app:digitTextSize="11sp"
+            app:digitWidth="64dp"
+            app:mask=""
+            app:pinAccentColor="#BB3E0C"/>
 
-    <TextView
-        android:id="@+id/html_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
-    <EditText
-        android:id="@+id/textDialog1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/btn_set_pin_error"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Set Error"/>
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/text_input_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_clear_pin_error"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Clear Error"/>
 
-        <EditText
-            android:id="@+id/textDialog"
+            <Button
+                android:id="@+id/btn_clear_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Clear Text"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/html_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-    </android.support.design.widget.TextInputLayout>
 
-    <TextView
-        android:id="@+id/mobile_number_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:text="Mobile Number"
-        android:visibility="invisible"/>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/text_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/mobile_number"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:paddingLeft="16dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@android:color/white"
-        android:hint="Mobile Number"
-        android:textColor="#BB833A"
-        android:textColorHint="@android:color/darker_gray"/>
-</LinearLayout>
+            <EditText
+                android:id="@+id/textDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+</ScrollView>

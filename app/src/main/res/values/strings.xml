@@ -30,7 +30,7 @@
     <string name="title_activity_progress_animation">Progress Animation</string>
     <string name="title_activity_data_binding">Data Binding</string>
     <string name="welcome_to_x">Welcome to %1$s</string>
-    <string name="app_name_reg_title"><![CDATA[Near<font color=#f04e2b>Buy</font>]]></string>
+    <string name="app_name_reg_title"><![CDATA[<b>Sha<font color=#f04e2b>Bi</font></b>]]></string>
     <string name="title_activity_search_view">SearchViewActivity</string>
 
 </resources>

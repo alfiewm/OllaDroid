@@ -33,11 +33,7 @@ public class MasterActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onResume() {
         super.onResume();
-//    findViewById(R.id.btn_range_seekbar).performClick();
-/*        Intent it = new Intent(this, ActionBarTestActivity.class);
-        it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(it);
-        finish();*/
+        findViewById(R.id.shape_test).performClick();
     }
 
     @OnClick({R.id.control_camera, R.id.animation_test, R.id.swipe_refresh, R.id.shape_test,
