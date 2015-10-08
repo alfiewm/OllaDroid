@@ -33,12 +33,12 @@ public class MasterActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onResume() {
         super.onResume();
-        findViewById(R.id.shape_test).performClick();
+//        findViewById(R.id.shape_test).performClick();
     }
 
     @OnClick({R.id.control_camera, R.id.animation_test, R.id.swipe_refresh, R.id.shape_test,
             R.id.action_bar_test, R.id.webview_cookie, R.id.btn_range_seekbar, R.id.btn_progress_animation,
-            R.id.btn_data_binding})
+            R.id.btn_data_binding, R.id.launch_mode_test})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.control_camera:
@@ -68,6 +68,11 @@ public class MasterActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.btn_data_binding:
                 startActivity(new Intent(this, DataBindingActivity.class));
+                break;
+            case R.id.launch_mode_test:
+                Intent intent = new Intent(this, PocketAnimActivity.class);
+                intent.putExtra(PocketAnimActivity.EXTRA_TEST_DATA, "nimei");
+                startActivity(intent);
                 break;
             default:
                 break;

@@ -71,7 +71,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title_activity_data_binding"/>
-
+        <Button
+            android:id="@+id/launch_mode_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Launch Mode Test"/>
         <Button
             android:id="@+id/btn_to_be_continue"
             android:layout_width="wrap_content"
