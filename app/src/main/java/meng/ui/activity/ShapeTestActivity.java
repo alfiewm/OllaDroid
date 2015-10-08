@@ -6,6 +6,7 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import butterknife.ButterKnife;
@@ -22,6 +23,8 @@ public class ShapeTestActivity extends AppCompatActivity {
     TextInputLayout textInputLayout;
     @InjectView(R.id.pin_entry_view)
     PinEntryView pinEntryView;
+    @InjectView(R.id.textDialog)
+    EditText textInputEditText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,7 @@ public class ShapeTestActivity extends AppCompatActivity {
         String s = getString(R.string.welcome_to_x, getString(R.string.app_name_reg_title));
         htmlTextView.setText(Html.fromHtml(s));
         textInputLayout.setHint("Mobile Number");
+        textInputEditText.setTextSize(11);
     }
 
     @Override
