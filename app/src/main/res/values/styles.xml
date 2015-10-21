@@ -17,4 +17,9 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <style name="CompactToolbarToMatch19" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColorPrimary">#ff11aa</item>
+        <item name="actionMenuTextColor">#22ff77</item>
+    </style>
+
 </resources>
