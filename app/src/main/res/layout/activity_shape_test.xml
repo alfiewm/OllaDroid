@@ -11,70 +11,33 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <meng.ui.view.PinEntryView
-            android:id="@+id/pinEntryViewSolo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            app:accentStyle="surround"
-            app:accentType="character"
-            app:accentWidth="1.5dp"
-            app:digitBackground="@android:color/white"
-            app:digitElevation="0sp"
-            app:digitHeight="64dp"
-            app:digitSpacing="5dp"
-            app:digitTextColor="@android:color/black"
-            app:digitTextSize="11sp"
-            app:digitWidth="64dp"
-            app:mask=""
-            app:pinAccentColor="#00ff00"/>
-
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="32dp"
-            android:paddingLeft="16dp">
+            android:layout_marginTop="20dp">
 
-            <TextView
-                android:id="@+id/enter_code_hint"
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/btn_set_pin_error"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="input pin code"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:layout_weight="1"
+                android:text="Set Error"/>
 
-            <meng.ui.view.PinEntryView
-                android:id="@+id/pinEntryView"
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/btn_clear_pin_error"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/enter_code_hint"
-                android:layout_marginTop="4dp"
-                app:accentStyle="surround"
-                app:accentType="character"
-                app:accentWidth="1.5dp"
-                app:digitBackground="@android:color/white"
-                app:digitElevation="0sp"
-                app:digitHeight="64dp"
-                app:digitSpacing="5dp"
-                app:digitTextColor="@android:color/black"
-                app:digitTextSize="11sp"
-                app:digitWidth="64dp"
-                app:mask=""
-                app:pinAccentColor="#00ff00"/>
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:text="Clear Error"/>
 
-            <!--   <Button
-                   android:id="@+id/btn_clear_pin"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_centerVertical="true"
-                   android:layout_toRightOf="@id/pinEntryView"
-                   android:paddingBottom="10dp"
-                   android:paddingLeft="10dp"
-                   android:paddingRight="10dp"
-                   android:paddingTop="32dp"/>-->
-        </RelativeLayout>
+            <Button
+                android:id="@+id/btn_clear_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Clear Text"/>
+        </LinearLayout>
 
         <meng.ui.view.PinEntryView
             android:id="@+id/pin_entry_view"
@@ -93,33 +56,6 @@
             app:mask=""
             app:pinAccentColor="#FF00FF"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
-
-            <Button
-                android:id="@+id/btn_set_pin_error"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Set Error"/>
-
-            <Button
-                android:id="@+id/btn_clear_pin_error"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Clear Error"/>
-
-            <Button
-                android:id="@+id/btn_clear_text"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Clear Text"/>
-        </LinearLayout>
-
         <TextView
             android:id="@+id/html_text_view"
             android:layout_width="match_parent"
@@ -136,5 +72,76 @@
                 android:layout_height="wrap_content"/>
         </android.support.design.widget.TextInputLayout>
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="10dp"
+            android:background="#00dfa3"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#800fa3">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="-10dp"
+                    android:layout_marginTop="-10dp"
+                    android:src="@drawable/ic_launcher"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ViewSwitcher
+            android:id="@+id/view_switcher"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inAnimation="@android:anim/fade_in"
+            android:outAnimation="@android:anim/fade_out">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#f30876"
+                android:text="Barak Obama"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#23f80f"
+                android:text="Photos"/>
+        </ViewSwitcher>
+
+        <ViewSwitcher
+            android:id="@+id/toolbar_switcher"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inAnimation="@android:anim/fade_in"
+            android:outAnimation="@android:anim/fade_out">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/activity_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ff0033"
+                android:title="Barak Obama"
+                android:minHeight="?attr/actionBarSize"
+                app:theme="@style/Theme.AppCompat"/>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/drawer_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ff0033"
+                android:title="Maps"
+                android:minHeight="?attr/actionBarSize"
+                app:theme="@style/Theme.AppCompat"/>
+        </ViewSwitcher>
     </LinearLayout>
 </ScrollView>
