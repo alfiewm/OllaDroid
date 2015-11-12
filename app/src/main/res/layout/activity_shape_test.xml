@@ -75,7 +75,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="100dp"
             android:layout_margin="10dp"
             android:background="#00dfa3"
             android:clipChildren="false"
@@ -143,5 +143,10 @@
                 android:minHeight="?attr/actionBarSize"
                 app:theme="@style/Theme.AppCompat"/>
         </ViewSwitcher>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="4"/>
     </LinearLayout>
 </ScrollView>

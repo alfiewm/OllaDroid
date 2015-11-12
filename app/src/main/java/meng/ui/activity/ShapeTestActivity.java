@@ -14,6 +14,7 @@ import android.widget.ViewSwitcher;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+import meng.Utils;
 import meng.olladroid.R;
 import meng.ui.view.PinEntryView;
 
@@ -59,20 +60,31 @@ public class ShapeTestActivity extends AppCompatActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_set_pin_error:
+                Utils.toggleSoftInput(ShapeTestActivity.this, true);
                 pinEntryView.setDigitColor(Color.RED);
                 break;
             case R.id.btn_clear_pin_error:
+                Utils.hideKeyboard(this, textInputEditText);
+                textInputEditText.requestFocus();
+                Utils.showKeyboard(this, textInputEditText, true);
                 pinEntryView.setDigitColor(getResources().getColor(android.R.color.black));
                 break;
             case R.id.btn_clear_text:
+                textInputEditText.requestFocus();
+                Utils.showKeyboard(this, textInputEditText, true);
+                Utils.hideKeyboard(this, textInputEditText);
+                textInputEditText.requestFocus();
+                Utils.showKeyboard(this, textInputEditText, true);
+                Utils.hideKeyboard(this, textInputEditText);
                 pinEntryView.clearText();
                 break;
             case R.id.view_switcher:
-//                viewSwitcher.showNext();
-//                toolbarSwitcher.showNext();
+                textInputEditText.requestFocus();
+                Utils.showKeyboard(this, textInputEditText, true);
                 toolbarSwitcher.setDisplayedChild(toolbarSwitcher.getDisplayedChild() == 0 ? 1 : 0);
                 break;
             case R.id.toolbar_switcher:
+                Utils.hideKeyboard(this, textInputEditText);
                 toolbarSwitcher.showNext();
                 break;
             default:
