@@ -3,22 +3,32 @@ package meng.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import meng.olladroid.R;
 
 public class ActionBarTestActivity extends AppCompatActivity {
+    
+    public static final String[] albamList = {"nimei", "nima", "nidaye"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_action_bar_test);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ActionBar actionbar = getSupportActionBar();
+        Spinner actionbarSpinner = new Spinner(this);
+        actionbarSpinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, albamList));
+        actionbar.setCustomView(new Spinner(this));
+        actionbar.setDisplayShowCustomEnabled(true);
+        actionbar.setDisplayHomeAsUpEnabled(true);
         setTitle("ABT");
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
@@ -64,7 +74,7 @@ public class ActionBarTestActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            return  inflater.inflate(R.layout.fragment_action_bar_test, container, false);
+            return inflater.inflate(R.layout.fragment_action_bar_test, container, false);
         }
 
         @Override

@@ -2,52 +2,64 @@ package meng.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.facebook.rebound.Spring;
+import com.facebook.rebound.SpringListener;
+import com.facebook.rebound.SpringSystem;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 import meng.ui.view.StatusBar;
 
 import meng.olladroid.R;
 
-public class AnimationTestActivity extends AppCompatActivity {
+public class AnimationTestActivity extends AppCompatActivity implements SpringListener {
 
-    private StatusBar statusBar;
+    private static final String TAG = AnimationTestActivity.class.getSimpleName();
+    @InjectView(R.id.spring_value)
+    TextView currValueView;
+    @InjectView(R.id.end_value)
+    EditText endValueView;
+    SpringSystem springSystem;
+    Spring spring;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animation_test);
-        statusBar = (StatusBar) findViewById(R.id.status_bar);
-        statusBar.initViews();
-        initViews();
-    }
-
-    private void initViews() {
-        statusBar.setPhotoStatusView(R.string.upload_photo, R.string.ok, null);
-        statusBar.setDLStatusView(R.string.verify_dl_license, R.string.ok, null);
+        ButterKnife.inject(this);
+        springSystem = SpringSystem.create();
+        spring  = springSystem.createSpring();
+        spring.addListener(this);
     }
 
     public void onClick(View v) {
-        int randomNum = (int) (Math.random() * 4);
-        switch (randomNum) {
-            case 0:
-                statusBar.setPhotoStatusView(R.string.photo_pending_review, 0, null);
-                statusBar.setDLStatusView(R.string.dl_pending_review, 0, null);
-                break;
-            case 1:
-                statusBar.hidePhotoStatusView();
-                statusBar.setDLStatusView(R.string.dl_rejected, R.string.ok, null);
-                break;
-            case 2:
-                statusBar.setPhotoStatusView(R.string.photo_rejected, R.string.ok, null);
-                statusBar.hideDLStatusView();
-                break;
-            case 3:
-                statusBar.hidePhotoStatusView();
-                statusBar.hideDLStatusView();
-                break;
-            default:
-                break;
-        }
+         spring.setEndValue(Double.valueOf(endValueView.getText().toString()));
     }
 
+    @Override
+    public void onSpringUpdate(Spring spring) {
+        currValueView.setText("" + spring.getCurrentValue());
+    }
+
+    @Override
+    public void onSpringAtRest(Spring spring) {
+        Log.d(TAG, "onSpringAtRest: ");
+        Toast.makeText(this, "At Rest", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onSpringActivate(Spring spring) {
+        Log.d(TAG, "onSpringActivate: ");
+    }
+
+    @Override
+    public void onSpringEndStateChange(Spring spring) {
+        Log.d(TAG, "onSpringEndStateChange: ");
+    }
 }
