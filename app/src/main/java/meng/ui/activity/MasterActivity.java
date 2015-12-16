@@ -6,10 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import butterknife.InjectView;
 import meng.olladroid.R;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import meng.ui.ViewTouchTestFragment;
 
 public class MasterActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -38,7 +40,7 @@ public class MasterActivity extends AppCompatActivity implements View.OnClickLis
 
     @OnClick({R.id.control_camera, R.id.animation_test, R.id.swipe_refresh, R.id.shape_test,
             R.id.action_bar_test, R.id.webview_cookie, R.id.btn_range_seekbar, R.id.btn_progress_animation,
-            R.id.btn_data_binding, R.id.launch_mode_test})
+            R.id.btn_data_binding, R.id.launch_mode_test, R.id.view_touch_test})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.control_camera:
@@ -74,8 +76,20 @@ public class MasterActivity extends AppCompatActivity implements View.OnClickLis
                 intent.putExtra(PocketAnimActivity.EXTRA_TEST_DATA, "nimei");
                 startActivity(intent);
                 break;
+            case R.id.view_touch_test:
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, new ViewTouchTestFragment()).addToBackStack("").commit();
+                break;
             default:
                 break;
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+            getSupportFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
         }
     }
 }
