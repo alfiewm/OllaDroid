@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<meng.ui.view.MyViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                          android:layout_width="match_parent"
-                          android:layout_height="match_parent"
-                          android:background="#FF2307"
-                          android:gravity="center_vertical"
-                          android:orientation="horizontal">
+<meng.ui.view.test.MyViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:id="@+id/my_view_group"
+                               android:background="#7299a3"
+                               android:gravity="center_vertical"
+                               android:orientation="horizontal">
 
-    <meng.ui.view.MyView
+    <meng.ui.view.test.MyView
+        android:id="@+id/my_view"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:background="#AA23FA"/>
+        android:background="#f05930"/>
 
-    <EditText
-        android:id="@+id/edit_text"
-        android:layout_width="200dp"
+    <meng.ui.view.test.MyEditText
+        android:id="@+id/my_edit_text"
+        android:layout_width="100dp"
         android:layout_height="50dp"/>
-</meng.ui.view.MyViewGroup>
+    
+    <EditText
+        android:id="@+id/system_edit_text"
+        android:layout_width="100dp"
+        android:layout_height="50dp"/>
+</meng.ui.view.test.MyViewGroup>

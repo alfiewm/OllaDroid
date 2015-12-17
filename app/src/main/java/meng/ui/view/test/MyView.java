@@ -1,10 +1,12 @@
-package meng.ui.view;
+package meng.ui.view.test;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+
+import meng.Utils;
 
 /**
  * Created by mengw on 15/12/16.
@@ -27,13 +29,13 @@ public class MyView extends View {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.d(TAG, "dispatchTouchEvent: event = " + ev.getAction());
+        Log.d(TAG, "dispatchTouchEvent: event = " + Utils.motionEventToString(ev));
         return super.dispatchTouchEvent(ev);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Log.d(TAG, "onTouchEvent: event = " + event.getAction());
+        Log.d(TAG, "onTouchEvent: event = " + Utils.motionEventToString(event));
         return super.onTouchEvent(event);
     }
 }

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
@@ -47,6 +48,21 @@ public class Utils {
     public static void toggleSoftInput(Context context, boolean force) {
         InputMethodManager inputMethodManager = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
         inputMethodManager.toggleSoftInput(force ? InputMethodManager.SHOW_FORCED : InputMethodManager.SHOW_IMPLICIT, 0);
+    }
+    
+    public static String motionEventToString(MotionEvent ev) {
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                return "ACTION_DOWN";
+            case MotionEvent.ACTION_MOVE:
+                return "ACTION_MOVE";
+            case MotionEvent.ACTION_UP:
+                return "ACTION_UP";
+            case MotionEvent.ACTION_CANCEL:
+                return "ACTION_CANCEL";
+            default:
+                return "OTHER EVENT";
+        }
     }
 
 }
