@@ -1,9 +1,12 @@
 package meng.ui.activity;
 
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.TranslateAnimation;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +28,8 @@ public class AnimationTestActivity extends AppCompatActivity implements SpringLi
     TextView currValueView;
     @InjectView(R.id.end_value)
     EditText endValueView;
+    @InjectView(R.id.random)
+    Button button;
     SpringSystem springSystem;
     Spring spring;
 
@@ -36,10 +41,22 @@ public class AnimationTestActivity extends AppCompatActivity implements SpringLi
         springSystem = SpringSystem.create();
         spring  = springSystem.createSpring();
         spring.addListener(this);
+        endValueView.setText("10");
+        currValueView.setText("10");
     }
 
     public void onClick(View v) {
-         spring.setEndValue(Double.valueOf(endValueView.getText().toString()));
+        spring.setEndValue(Double.valueOf(endValueView.getText().toString()));
+        Rect mOriginalRect = new Rect();
+        mOriginalRect.set(button.getLeft(), button.getTop(), button.getRight(), button.getBottom());
+
+        TranslateAnimation anim = new TranslateAnimation(200, 400, 200, 400);
+        anim.setDuration(300);
+        anim.setFillAfter(true);
+//        anim.setFillBefore(true);
+        button.startAnimation(anim);
+
+        button.layout(mOriginalRect.left, mOriginalRect.top, mOriginalRect.right, mOriginalRect.bottom);
     }
 
     @Override
