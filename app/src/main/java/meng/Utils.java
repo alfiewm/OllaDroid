@@ -2,10 +2,14 @@ package meng;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.MotionEvent;
+import android.view.Surface;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
 /**
@@ -65,4 +69,38 @@ public class Utils {
         }
     }
 
+    public static int getOrientation(Context context) {
+        final int orientation = context.getResources().getConfiguration().orientation;
+        final int devRotation = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getRotation();
+
+        switch (orientation) {
+            case android.content.res.Configuration.ORIENTATION_PORTRAIT:
+                if (devRotation == Surface.ROTATION_90 || devRotation == Surface.ROTATION_180) {
+                    // this means the different devRotation in the tablet
+                    return ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT;
+                } else {
+                    return ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
+                }
+            case android.content.res.Configuration.ORIENTATION_LANDSCAPE:
+                if (devRotation == Surface.ROTATION_0 || devRotation == Surface.ROTATION_90) {
+                    // this means the different devRotation in the tablet
+                    return ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
+                } else {
+                    return ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE;
+                }
+            default:
+                return ActivityInfo.SCREEN_ORIENTATION_NOSENSOR;
+        }
+    }
+
+    public static boolean isScreenOrientationEnabled(Context context) {
+        boolean isOrientationEnabled;
+        try {
+            isOrientationEnabled = Settings.System.getInt(context.getContentResolver(),
+                    Settings.System.ACCELEROMETER_ROTATION) == 1;
+        } catch (Settings.SettingNotFoundException e) {
+            isOrientationEnabled = false;
+        }
+        return isOrientationEnabled;
+    }
 }
