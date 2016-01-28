@@ -5,9 +5,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,8 +21,7 @@ import com.facebook.rebound.SpringSystem;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-import meng.ui.view.StatusBar;
-
+import butterknife.OnClick;
 import meng.olladroid.R;
 
 public class AnimationTestActivity extends AppCompatActivity implements SpringListener {
@@ -30,8 +33,14 @@ public class AnimationTestActivity extends AppCompatActivity implements SpringLi
     EditText endValueView;
     @InjectView(R.id.random)
     Button button;
+    @InjectView(R.id.text_switcher)
+    TextSwitcher textSwitcher;
+    @InjectView(R.id.btn_change_text)
+    Button bTnChangeText;
     SpringSystem springSystem;
     Spring spring;
+    private Animation inAnimation;
+    private Animation outAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +48,19 @@ public class AnimationTestActivity extends AppCompatActivity implements SpringLi
         setContentView(R.layout.activity_animation_test);
         ButterKnife.inject(this);
         springSystem = SpringSystem.create();
-        spring  = springSystem.createSpring();
+        spring = springSystem.createSpring();
         spring.addListener(this);
         endValueView.setText("10");
         currValueView.setText("10");
+        inAnimation = new AlphaAnimation(0f, 1f);
+        inAnimation.setDuration(250);
+        inAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
+
+        outAnimation = new AlphaAnimation(1f, 0f);
+        outAnimation.setDuration(250);
+        outAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
+        textSwitcher.setInAnimation(inAnimation);
+        textSwitcher.setOutAnimation(outAnimation);
     }
 
     public void onClick(View v) {
@@ -57,6 +75,18 @@ public class AnimationTestActivity extends AppCompatActivity implements SpringLi
         button.startAnimation(anim);
 
         button.layout(mOriginalRect.left, mOriginalRect.top, mOriginalRect.right, mOriginalRect.bottom);
+    }
+
+    private static boolean longText = false;
+
+    @OnClick(R.id.btn_change_text)
+    public void changeText(View v) {
+        if (longText) {
+            textSwitcher.setText("release to cancel");
+        } else {
+            textSwitcher.setText("release to cancel, release to cancel");
+        }
+        longText = !longText;
     }
 
     @Override
