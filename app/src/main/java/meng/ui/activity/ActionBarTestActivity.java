@@ -1,20 +1,16 @@
 package meng.ui.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Surface;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -26,6 +22,8 @@ import meng.olladroid.R;
 public class ActionBarTestActivity extends AppCompatActivity {
 
     public static final String[] albamList = {"nimei", "nima", "nidaye"};
+
+    boolean locked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +44,6 @@ public class ActionBarTestActivity extends AppCompatActivity {
         }
     }
 
-    boolean locked = false;
     @OnClick(R.id.orientation_lock)
     public void onClick() {
         locked = !locked;
