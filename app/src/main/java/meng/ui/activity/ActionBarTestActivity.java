@@ -29,7 +29,7 @@ public class ActionBarTestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_action_bar_test);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         ActionBar actionbar = getSupportActionBar();
         Spinner actionbarSpinner = new Spinner(this);
         actionbarSpinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, albamList));

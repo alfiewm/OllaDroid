@@ -20,22 +20,22 @@ import com.facebook.rebound.SpringListener;
 import com.facebook.rebound.SpringSystem;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 import meng.olladroid.R;
 
 public class AnimationTestActivity extends AppCompatActivity implements SpringListener {
 
     private static final String TAG = AnimationTestActivity.class.getSimpleName();
-    @InjectView(R.id.spring_value)
+    @Bind(R.id.spring_value)
     TextView currValueView;
-    @InjectView(R.id.end_value)
+    @Bind(R.id.end_value)
     EditText endValueView;
-    @InjectView(R.id.random)
+    @Bind(R.id.random)
     Button button;
-    @InjectView(R.id.text_switcher)
+    @Bind(R.id.text_switcher)
     TextSwitcher textSwitcher;
-    @InjectView(R.id.btn_change_text)
+    @Bind(R.id.btn_change_text)
     Button bTnChangeText;
     SpringSystem springSystem;
     Spring spring;
@@ -46,7 +46,7 @@ public class AnimationTestActivity extends AppCompatActivity implements SpringLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animation_test);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         springSystem = SpringSystem.create();
         spring = springSystem.createSpring();
         spring.addListener(this);

@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import meng.Utils;
 import meng.olladroid.R;
 import meng.ui.view.test.MyEditText;
@@ -24,13 +24,13 @@ import meng.ui.view.test.MyViewGroup;
 public class ViewTouchTestFragment extends Fragment {
 
     private static final String TAG = ViewTouchTestFragment.class.getSimpleName();
-    @InjectView(R.id.my_edit_text)
+    @Bind(R.id.my_edit_text)
     MyEditText myEditText;
-    @InjectView(R.id.system_edit_text)
+    @Bind(R.id.system_edit_text)
     EditText systemEditText;
-    @InjectView(R.id.my_view_group)
+    @Bind(R.id.my_view_group)
     MyViewGroup myViewGroup;
-    @InjectView(R.id.my_view)
+    @Bind(R.id.my_view)
     MyView myView;
 
     public ViewTouchTestFragment() {
@@ -40,7 +40,7 @@ public class ViewTouchTestFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_view_touch_test, container, false);
-        ButterKnife.inject(this, rootView);
+        ButterKnife.bind(this, rootView);
         initViews();
         return rootView;
     }

@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-import butterknife.InjectView;
 import meng.olladroid.R;
 
 import butterknife.ButterKnife;
@@ -21,7 +20,7 @@ public class MasterActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_master);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         findViewById(R.id.root).setOnClickListener(this);
         Log.d(TAG, "onCreate, action = " + getIntent().getAction());
     }

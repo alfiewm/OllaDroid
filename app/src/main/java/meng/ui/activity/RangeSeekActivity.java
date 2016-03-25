@@ -13,25 +13,25 @@ import meng.olladroid.R;
 import meng.ui.view.RangeSeekBar;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 
 public class RangeSeekActivity extends AppCompatActivity {
     private static int MIN_SEEK_BAR_VALUE = 0;
     private static int MAX_SEEK_BAR_VALUE = 1000;
 
-    @InjectView(R.id.range_seek_bar)
+    @Bind(R.id.range_seek_bar)
     RangeSeekBar<Integer> rangeSeekBar;
-    @InjectView(R.id.min_value)
+    @Bind(R.id.min_value)
     EditText minValueView;
-    @InjectView(R.id.max_value)
+    @Bind(R.id.max_value)
     EditText maxValueView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_range_seek);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         rangeSeekBar.setRangeValues(MIN_SEEK_BAR_VALUE, MAX_SEEK_BAR_VALUE);
         rangeSeekBar.setValueFormatter(new PriceValueFormatter(this, 0/*actual min price*/, 500/*actual max price*/, "Rs."/*currency*/));
     }
