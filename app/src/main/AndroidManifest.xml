@@ -76,9 +76,6 @@
             android:label="@string/title_activity_progress_animation">
         </activity>
         <activity
-            android:name="meng.ui.activity.DataBindingActivity"
-            android:label="@string/title_activity_data_binding"/>
-        <activity
             android:name="meng.ui.activity.SearchViewActivity"
             android:label="@string/title_activity_search_view">
         </activity>

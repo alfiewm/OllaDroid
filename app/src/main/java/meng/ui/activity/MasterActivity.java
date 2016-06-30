@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 
 import meng.olladroid.R;
 
@@ -68,7 +69,10 @@ public class MasterActivity extends AppCompatActivity implements View.OnClickLis
                 startActivity(new Intent(this, ProgressAnimationActivity.class));
                 break;
             case R.id.btn_data_binding:
-                startActivity(new Intent(this, DataBindingActivity.class));
+                View dbView = findViewById(R.id.btn_data_binding);
+                ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) dbView.getLayoutParams();
+                params.setMargins(300, 0, 0, 50);
+                dbView.setLayoutParams(params);
                 break;
             case R.id.launch_mode_test:
                 Intent intent = new Intent(this, PocketAnimActivity.class);
